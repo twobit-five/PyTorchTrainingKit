@@ -8,7 +8,7 @@ This is still very much a work in progress.  The project is simply tools I have 
 [ ] Need to finish installations instruction.
 [ ] Eventually publish to PyPi ?
 
-For now directly clone the project and import and use the classes in local project.
+For now directly clone the project and import and use the classes in local project. The classes must be copied to a folder named 'training' with an __init__.py for now.  This will eventually be fixed.
 
 ## Example Usage (ModelTrainer):
 Note:
