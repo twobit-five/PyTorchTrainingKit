@@ -7,10 +7,12 @@ from torch import nn, optim
 import torch.optim as optim
 from training.call_backs import EarlyStopping
 from torch import nn, optim
+from torch.optim.lr_scheduler import _LRScheduler, ReduceLROnPlateau
+from typing import Optional, Union
 
 class ModelTrainer:
     def __init__(self, model: nn.Module, optimizer: optim.Optimizer, 
-                 criterion, scheduler: Optional[optim.lr_scheduler._LRScheduler] = None, 
+                 criterion, scheduler: Optional[Union[_LRScheduler, ReduceLROnPlateau]] = None, 
                  device: str = 'cpu', early_stopping: Optional[EarlyStopping] = None,
                  clip_type: Optional[str]=None, clip_value: Optional[float]=None):
         
@@ -38,7 +40,7 @@ class ModelTrainer:
             epoch += 1
             self.model.train()
 
-            pbar = self._training_step(train_loader)
+            pbar = self._training_step(train_loader, track_gradients)
 
             #TODO fix this logic
             if (validation_frequency == 1 or (epoch % validation_frequency) == 0 or epoch == epochs):
