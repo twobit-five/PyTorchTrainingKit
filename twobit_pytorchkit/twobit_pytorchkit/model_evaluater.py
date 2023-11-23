@@ -101,7 +101,7 @@ class ModelEvaluator:
 
         num_classes = len(np.unique(self.true_labels))
         #TODO I dont like this hadrcoded 40
-        all_targets_binarized = label_binarize(self.true_labels, classes=range(40))
+        all_targets_binarized = label_binarize(self.true_labels, classes=range(num_classes))
 
         print("Binarized labels shape:", all_targets_binarized.shape)
         print("Flattened binarized labels shape:", all_targets_binarized.ravel().shape)
@@ -109,12 +109,6 @@ class ModelEvaluator:
 
         if self.true_labels is None or self.probabilities is None:
             raise ValueError("Model not evaluated yet.")
-        
-        # Dynamically determine the number of classes
-        num_classes = len(np.unique(self.true_labels))
-
-        # Binarize the labels for all classes
-        all_targets_binarized = label_binarize(self.true_labels, classes=range(num_classes))
 
         # Compute micro-average ROC curve and ROC area
         fpr, tpr, _ = roc_curve(all_targets_binarized.ravel(), self.probabilities.ravel())
