@@ -35,10 +35,11 @@ trainer = ModelTrainer(model=resNet34, optimizer=optimizer,
                        device=device, early_stopping=early_stopping)
 
 # Train the model
-training_record = trainer.train(train_loader, val_loader, epochs=10, validation_frequency=1, track_gradients=True)
+training_record = trainer.train(train_loader, val_loader, epochs=20, validation_frequency=1, track_gradients=True)
 ```
 
-![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/a8557b0d-a699-490b-a0ff-812e339be0ab)
+![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/a94f4455-28ee-42d5-b0a7-17fb0f7482ff)
+
 
 ## Example Usage (TrainingPlotter):
 
@@ -50,13 +51,11 @@ plotter.plot_training_history()
 plotter.plot_gradient_norms()
 plotter.plot_learning_rate()
 ```
+![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/e0e594cc-63d1-48c4-9cde-dbd37d838f5e)
 
-![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/472dcd6e-e5a3-42af-b7fd-0d5c03a8e172)
+![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/24a28ab3-2222-45e8-ae4d-b0b55e30f6eb)
 
-![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/66bec286-8759-4a7f-bf0c-e527c243e7c8)
-
-![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/1429de92-221f-4d71-b2fa-d11b3ea8c64d)
-
+![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/1391ce67-7d9c-40d5-a480-a062969728ba)
 
 
 
