@@ -50,11 +50,8 @@ class ModelTrainer:
             #self.training_record.finalize_epoch()
             self._log_metrics(epoch, epochs)
             latest_metrics = self.training_record.get_latest_metrics()
-
-            # Think aabout returning N/A if no val metrics
-            description = f"Epoch: {epoch}/{epochs}, Train Loss: {latest_metrics.get('train_loss', -1):.4f}, Val Loss: {latest_metrics.get('val_loss', -1):.4f}, Val Acc: {latest_metrics.get('val_accuracy', -1):.4f}"
-            if self.early_stopping:
-                description += f", Early Stopping: {self.early_stopping.status}"
+    
+            description = self._get_training_description(latest_metrics, epoch, epochs)
             
             #FIXME this is a hack to get the pbar to update
             print(description)
@@ -161,3 +158,21 @@ class ModelTrainer:
                 total_norm += param_norm.item() ** 2
         total_norm = total_norm ** 0.5
         return total_norm
+    
+    def _get_training_description(self, latest_metrics, epoch, epochs):
+        def format_metric(metric):
+            return f"{metric:.4f}" if metric != 'N/A' else 'N/A'
+
+        train_loss = latest_metrics.get('train_loss', 'N/A')
+        val_loss = latest_metrics.get('val_loss', 'N/A')
+        val_accuracy = latest_metrics.get('val_accuracy', 'N/A')
+
+        train_loss_str = format_metric(train_loss)
+        val_loss_str = format_metric(val_loss)
+        val_accuracy_str = format_metric(val_accuracy)
+
+        description = f"Epoch: {epoch}/{epochs}, Train Loss: {train_loss_str}, Val Loss: {val_loss_str}, Val Acc: {val_accuracy_str}"
+        if self.early_stopping:
+            description += f", Early Stopping: {self.early_stopping.status}"
+        
+        return description
