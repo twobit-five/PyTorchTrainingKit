@@ -38,7 +38,7 @@ trainer = ModelTrainer(model=resNet34, optimizer=optimizer,
 training_record = trainer.train(train_loader, val_loader, epochs=10, validation_frequency=1, track_gradients=True)
 ```
 
-![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/1f5c117a-5fee-4d2a-b19d-44f648d4204f)
+![image](https://github.com/twobit-five/PyTorchTrainingKit/assets/69398054/a8557b0d-a699-490b-a0ff-812e339be0ab)
 
 ## Example Usage (TrainingPlotter):
 
