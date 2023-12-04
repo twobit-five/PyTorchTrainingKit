@@ -11,8 +11,7 @@ https://github.com/twobit-five/PyTorchTrainingKit/issues
 [ ] Eventually publish to PyPi ?
 
 For now directly clone the project and import and use the classes in local project. The classes must be copied to a folder named 'training' with an __init__.py for now.  This will eventually be fixed.
-Note:
-Should now be able to have classes in any folder.  Please note the examples given below would need to adjust imports accordingly
+
 
 ## Example Usage (ModelTrainer):
 Note:
