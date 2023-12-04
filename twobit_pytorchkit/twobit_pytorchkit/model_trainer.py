@@ -1,11 +1,11 @@
 import torch
 import tqdm
-from .records import TrainingRecord
+from training.records import TrainingRecord
 from typing import Optional
 from torch.utils.data import DataLoader
 from torch import nn, optim
 import torch.optim as optim
-from .call_backs import EarlyStopping
+from training.call_backs import EarlyStopping
 from torch import nn, optim
 from torch.optim.lr_scheduler import _LRScheduler, ReduceLROnPlateau
 from typing import Optional, Union

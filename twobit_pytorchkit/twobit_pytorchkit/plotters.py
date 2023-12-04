@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from .records import TrainingRecord
+from training.records import TrainingRecord
 
 class TrainingPlotter:
     def __init__(self, training_record: TrainingRecord):
