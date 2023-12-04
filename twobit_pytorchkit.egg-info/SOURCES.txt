@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+twobit_pytorchkit.egg-info/PKG-INFO
+twobit_pytorchkit.egg-info/SOURCES.txt
+twobit_pytorchkit.egg-info/dependency_links.txt
+twobit_pytorchkit.egg-info/requires.txt
+twobit_pytorchkit.egg-info/top_level.txt

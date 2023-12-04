@@ -1,11 +1,11 @@
 import torch
 import tqdm
-from training.records import TrainingRecord
+from .records import TrainingRecord
 from typing import Optional
 from torch.utils.data import DataLoader
 from torch import nn, optim
 import torch.optim as optim
-from training.call_backs import EarlyStopping
+from .call_backs import EarlyStopping
 from torch import nn, optim
 from torch.optim.lr_scheduler import _LRScheduler, ReduceLROnPlateau
 from typing import Optional, Union
@@ -119,7 +119,7 @@ class ModelTrainer:
                 self.scheduler.step()
 
         if self.early_stopping and self.early_stopping(self.model, total_val_loss, epoch):
-            self.training_record.set_early_stopping_epoch(epoch)
+            self.training_record.set_early_stopping_epoch(epoch - self.early_stopping.patience)
             print(self.early_stopping.status)
             return True
         else:

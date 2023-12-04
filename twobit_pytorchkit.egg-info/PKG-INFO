@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: twobit-pytorchkit
+Version: 0.1.0
+Summary: PyTorch classes to assist in training PyTorch models, plotting training metrics, and evaluation.
+Home-page: https://github.com/twobit-five/PyTorchTrainingKit
+Author: Jeremy Berry
+Author-email: twobit.five@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# PyTorchTrainingKit
+Classes to help train pytorch models
+
+This is still very much a work in progress.  The project is simply tools I have created to help train PyTorch models. There is limited functionality and may not follow best practices. Suggestions are welcome for improvements.

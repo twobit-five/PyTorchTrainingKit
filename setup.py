@@ -15,6 +15,7 @@ setup(
         'numpy',
         'torch',  # need to verify torch version this works with
         'tqdm',
+        'torchvision'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',
