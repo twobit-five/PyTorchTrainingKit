@@ -1,3 +1,6 @@
+Note:
+This repository was initially created on a whim for my personal use. However, I've recently come across several more advanced and widely supported libraries that I was previously unaware of. These libraries, offering extensive functionality and support, surpass the capabilities of my own ability.  Given this discovery I no longer belive it is fruitful to develop this project.
+
 # PyTorchTrainingKit
 Classes to help train pytorch models
 
